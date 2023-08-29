@@ -105,8 +105,8 @@ Luego haz clic en el botón <em>Browse</em> y busca el proyecto en el directorio
 
 1. Publicar el proyecto en GitHub;
 2. Utiliza el tema/topic:
-   - *Grupo 4: **challengeforoalura4**;*
-   - Ve a la pestaña "`Acerca`" o `"About"` de tu proyecto en el menú de la izquierda dentro de tu repositorio de GitHub Incluye la etiqueta *"**challengeforoalura4**"*.
+   - *Grupo 5: **challengeforoalura5**;*
+   - Ve a la pestaña "`Acerca`" o `"About"` de tu proyecto en el menú de la izquierda dentro de tu repositorio de GitHub Incluye la etiqueta *"**challengeforoalura5**"*.
 
 ![11 gif - github](https://user-images.githubusercontent.com/78982435/209682261-a06b735c-0752-48ad-bbd3-5784e4f6d7ef.gif)
 
