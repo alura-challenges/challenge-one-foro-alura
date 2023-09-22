@@ -1,134 +1,246 @@
-# Challenge ONE | Back End | Foro Alura 
+<p align="center"><img src="https://github.com/CMZhn/Foro_Alura_ONE_G5/blob/main/Readme_Recursos/RearmeBanner.svg") </p>
 
-<p align="center" >
-     <img width="200" heigth="200" src="https://user-images.githubusercontent.com/91544872/209678377-70b50b21-33de-424c-bed8-6a71ef3406ff.png">
+<h1 style="color:rgb(12, 160, 94)">Challenge Back End Java - Foro Alura</h1>
+<p align="left">
+   <img src="https://img.shields.io/badge/ESTADO-FINALIZADO-brightgreen">
+   <img src="https://img.shields.io/badge/LIBERACI%C3%93N-SEPTIEMBRE%202023-rgb(162%2C162%2C40)">
+   <img src="https://img.shields.io/badge/VERSI%C3%93N-V1.0.23-rgb(15%2C128%2C193)">
+   <img src="https://img.shields.io/github/repo-size/CMZhn/Foro_Alura_ONE_G5">
 </p>
 
-### ¡Bienvenido al proyecto con las clases base del desafío Foro Alura con Java y Spring! 
+Cuarto reto de <a href="https://www.aluracursos.com/">Alura</a> + <a href="https://www.oracle.com/mx/education/oracle-next-education/">Oracle Next Education</a> grupo 5.
+<br>
+<p>
+Este reto cosiste en aplicar los conocimientos adquiridos en el programa ONE sobre <strong>Spring Boot 3 - JAVA API Rest</strong> y <strong>Spring Security - JWT </strong>. Este proyecto se enfoco a nivel de <strong>back end</strong> para replicar los procesos de la administracion de topicos de un foro, utilizando la <strong>arquitectura de software</strong> conocido como <strong>REST</strong>. Mediante del uso de <strong>HTTP Request</strong> la API respondera a las diferentes acciones de <strong>CRUD</strong> (CREATE, READ, UPDATE, DELETE), finalmente la API aplica conceptos de <strong>Spring Security</strong> mediante el uso de <strong>token JWT</strong>(JOSON WEB TOKEN).
+</p>
+<h2>Acerca del reto</h2>
+El reto cosiste en crear una API Rest con Spring Boot 3, que repique a nivel de back end parte de los procesos de un Foro. Este reto se divide en dos partes, la primera es sobre la aplicación del CRUD en la creación de Tópicos, y la segunda sobre autenticación y seguridad.
+<br>
+<br>
+La primera parte <strong>(Spring 1)</strong> consiste en que la API debe de permitir a los usuarios realizar las siguientes acciones:
+<ol>
+<li>
+  <code>Crear un nuevo tópico</Code>
+</li>
+<li> 
+  <code>Mostrar todos los tópicos creados</Code>
+</li>
+<li>
+  <code>Mostrar un tópico específico</Code>
+</li>
+<li>
+  <code>Actualizar un tópico</Code>
+</li>
+<li>
+  <code>Eliminar un tópico</Code>
+</li>
+</ol>
+También la API deberá cumplir con las siguientes reglas de negocio para cada una de estas acciones:
+<li>
+   <strong>Registro de un nuevo tópico</strong> mediante un POST al URI <code>/topicos</code> de un <strong>JSON</strong> con el titulo, mensaje, autor y curso en el body.
+   <ol>
+      <li>
+         <code>Todos los campos del JSON son obligatorios.</Code>
+      </li>
+      <li>
+         <code>La API no debe permitirlos registros duplicados (que contengan el mismo el mismo título y mensaje).</Code>
+      </li>
+   </ol>
+</li>
+<li>
+   <strong>Listar todos los topicos</strong> mediante un GET al URI <code>/topicos</code>, cuyo retornó será una lista de <strong>JSON</strong> con titulo, mensaje, fecha de creación, estado, autor y curso en el body.
+</li>
+<li>
+   <strong>Actualizacón de un tópico</strong> mediante un PUT al URI <code>/topicos</code> de un <strong>JSON</strong> con el id, titulo, mensaje, autor y curso en el body.
+   <ol>
+      <li>
+         <code>El campo de id y autor son obligatorios.</Code>
+      </li>
+      <li>
+         <code>El autor no se debe acturalizar.</Code>
+      </li>
+      <li>
+         <code>Solo el autor del topico puede actualizar el titulo, mensaje y curso.</Code>
+      </li>
+      <li>
+         <code>Los campos que llegen nullos o en blanco no se debe de actualizar.</Code>
+      </li>
+      <li>
+         <code>La API no debe permitirlos registros duplicados (que contengan el mismo el mismo título y mensaje).</Code>
+      </li>
+   </ol>
+</li>
+<li>
+   <strong>Detalle de un tópico</strong> mediante un GET al URI <code>/topicos/{id}</code>, cuyo retornó será un <strong>JSON</strong> con titulo, mensaje, fecha de creación, estado, autor y curso en el body.
+</li>
+<li>
+   <strong>Eliminación de un tópico</strong> mediante un DELETE al URI <code>/topicos/{id}</code>, cuya accion elimnará el topico del la base de datos.
+</li>
+
+<br>
+La Segunda parte <strong>(Spring 2)</strong> consiste ...:
+<li>
+   <strong>Titulo</strong> detalle.
+   <ol>
+      <li>
+         <code>regla</Code>
+      </li>
+   </ol>
+
+ <img src="https://github.com/CMZhn/Foro_Alura_ONE_G5/blob/main/Readme_Recursos/AluraChanllenges.svg" height="100">
+
+<h2>Tecnologías utilizadas</h2>
+<p align="left">
+   <img src="https://img.shields.io/badge/Eclipse%20IDE-2023%2006%20-8A2BE2">
+   <img src="https://img.shields.io/badge/MySQL-8.0.34-8A2BE2">
+   <img src="https://img.shields.io/badge/Spring%20Boot-3.0.6-8A2BE2">
+   <img src="https://img.shields.io/badge/Maven-4.0.0-8A2BE2">
+   <img src="https://img.shields.io/badge/Lombok-1.18.30-8A2BE2">
+   <img src="https://img.shields.io/badge/JDK-17-8A2BE2">   
+   
+</p>
+Para el desarrollo de este proyecto se utilizó las siguientes tecnologías:
+<br>
+<ol>
+   <li>
+      <a href="https://www.eclipse.org/downloads/">Eclipse</a> 2023-06 (4.28.0).
+   </li>
+   <li>
+      <a href="https://dev.mysql.com/downloads/workbench/">MySQL</a> 8.0.34.
+   </li>
+   <li>
+      <a href="https://start.spring.io/">Spring Boot</a> 3.0.6.
+   </li>
+   <li>
+      <a href="https://maven.apache.org/">Maven</a> 4.0.0.
+   </li>
+   <li>
+      <a href="https://projectlombok.org/setup/eclipse">Lombok</a> 1.18.30 (eclipse plugin).
+   </li>
+   <li>
+      <a href="https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html">JDK</a> 17.
+   </li>
+</ol>
+<img src="https://github.com/CMZhn/Foro_Alura_ONE_G5/blob/main/Readme_Recursos/Tecnologias_1.svg" height="60"> <img src="https://github.com/CMZhn/Foro_Alura_ONE_G5/blob/main/Readme_Recursos/Tecnologias_2.svg" height="60">
+<h3>Spring boot dependecies:</h3>
+<ol>
+   <li>Spring Web.</li>
+   <li>Spring Boot DevTools.</li>
+   <li>Lombok.</li>
+   <li>Spring Data JPA.</li>
+   <li>Flyway Migration.</li>
+   <li>MySQL Driver.</li>
+   <li>Validation.</li>
+</ol>
 
 
-### Pasos principales:
+<h2>Pruebas de la API</h2>
+Las pruebas de funcionalidad de API se pueden realizar en alguna herramienta de prueba de API, como Postman o Insomnia
+<li><a href="https://www.postman.com/"><img src="https://github.com/CMZhn/Foro_Alura_ONE_G5/blob/main/Readme_Recursos/LogoPostman.svg" height="25"> Postman</a></li>
+<li><a href="https://insomnia.rest/"><img src="https://github.com/CMZhn/Foro_Alura_ONE_G5/blob/main/Readme_Recursos/LogoInsomnia.svg" height="25"> Insomnia</a></li>
+<br>
+A continuacion se mostraran las purbas realizadas a la API con <strong>Postman</strong>.
 
-#### ⭐Marca este proyecto con una estrella 
+<h3>Pruebas Spring 1</h3>
+<p align="left">
+   <img src="https://img.shields.io/badge/PRUEBAS%20SPRING%201-4-orange">
+</p>
+1. Registro de nuevo Topico.<br>
+Para esta prueba se creó una HTTP POST request con la URI <code>http://localhost:8080/topicos</code>, después se envió un JSON con la siguiente estructura:
 
-#### 📚Sigue las lecciones y las instrucciones de contenido 
-
-#### 📃Visita la página del Desafío [¡Haciendo clic aquí!](https://www.aluracursos.com/challenges/oracle-one-back-end/aluraforo) 
-
-
-
-- ### Tecnologías utilizadas:
-
-  - [Eclipse](https://www.eclipse.org/)
-  - [MySql](https://www.mysql.com/)
-  - [Java](https://www.java.com/en/)
-
-  - [Spring Security](https://start.spring.io/)
-  - [Token JWT](https://jwt.io/)
-
-  
-
-  ## ⬇️ Download
-
-  ### ¿Cómo descargar?
-
-  #### 🔹 Fork
-
-  1. Haga el **Fork** del proyecto. En la parte superior derecha, al hacer clic en el icono, creará un repositorio del proyecto en su cuenta personal de GitHub.
-
-<p align="center" >
-     <img width="600" heigth="600" src="https://user-images.githubusercontent.com/101413385/169404781-7df6355b-3a15-472a-8d8e-fdb84d91a7bd.png">
+```
+{
+   "titulo":"Pagina blanca Error",
+   "mensaje":"Al crear controller Hola",
+   "id_autor":"1",
+   "id_curso":"1"
+}
+```
+<p align="Center">
+   <kbd>
+      <img src="https://github.com/CMZhn/Foro_Alura_ONE_G5/blob/main/Readme_Recursos/Prueba01_RegristrarTopico.JPG" height="300">
+   </kbd>
 </p>
 
-  2. Después de tener el repositorio "forkado" para su cuenta, verifica si la url de la página es la del repositorio de su cuenta.
+> Validaciones: <br>
+> * Si el JSON se envia por segunda vez o se repeite el titulo y mensaje retornadará un error 500 por duplicidad.<br>
+> * Si falta alguno de los campos o estan en blanco, se retornará un error 400 Bad Request.
 
- <p align="center" >
-     <img width="600" heigth="600" src="https://user-images.githubusercontent.com/78982435/209683304-04e0d114-8834-4449-b82b-29a38f057f2d.png">
+2. Mostrar todos los topicos.<br>
+Para esta prueba se creó una HTTP GET request con la URI <code>http://localhost:8080/topicos</code>, después del envio se retornará una lista de JSON como la siguiente:
+
+```
+[
+    {
+        "id": 1,
+        "titulo": "Pagina blanca Error 2",
+        "mensaje": "Al crear controller Hola",
+        "fechaCreacion": "2023-09-21T00:00:00",
+        "estado": "NO_RESPONDIDO",
+        "id_autor": 1,
+        "autor": "Admin",
+        "id_curso": 1,
+        "curso": "Spring Boot 3"
+    },
+    {
+        "id": 4,
+        "titulo": "Pagina blanca Error",
+        "mensaje": "Al crear controller Hola",
+        "fechaCreacion": "2023-09-22T00:00:00",
+        "estado": "NO_RESPONDIDO",
+        "id_autor": 1,
+        "autor": "Admin",
+        "id_curso": 1,
+        "curso": "Spring Boot 3"
+    }
+]
+```
+<p align="Center">
+   <kbd>
+      <img src="https://github.com/CMZhn/Foro_Alura_ONE_G5/blob/main/Readme_Recursos/Prueba02_GetTopicos.JPG" height="500">
+   </kbd>
 </p>
 
-  3. Haga clic en la opción **Code**. Presenta tres formas para instalar el repositorio en su máquina, y destacamos dos:
+3. Actualización de topico.<br>
+Para esta prueba se creó una HTTP PUT request con la URI <code>http://localhost:8080/topicos</code>, después se envió un JSON con la siguiente estructura:
 
-     <p align="center" >
-     <img width="600" heigth="600" src="https://user-images.githubusercontent.com/78982435/209683480-72fab313-ecbc-4de7-8f75-2d6b5013ea49.png">
-     </p></br>
-
-#### 🔹 Clonar o descargar el ZIP
-
-1 - Para clonar, simplemente copia el <em>url</em> resaltado en la imagen y ubicado justo debajo del HTTPS, crea una carpeta en tu computadora, abre el <em>cmd</em> o el <em>git bash</em> dentro de esa carpeta y luego ingresa el comando <strong>git clone</strong> y con el botón derecho del mouse dentro del terminal haz click en la opcion <strong>Paste</strong> para pegar el <em>url</em> y presiona <em>Enter</em>. 
-
-<p align="center" >
-     <img width="600" heigth="600" src="https://user-images.githubusercontent.com/78982435/209683774-85c78b5e-605f-4643-818f-0bb2eddca175.png">
+```
+{
+    "id": "1",
+    "titulo":"Pagina blanca Error 2",
+    "mensaje":"Al crear controller Hola",
+    "id_autor":"1",
+    "id_curso":"1"
+}
+```
+<p align="Center">
+   <kbd>
+      <img src="https://github.com/CMZhn/Foro_Alura_ONE_G5/blob/main/Readme_Recursos/Prueba03_PutTopico.JPG" height="300">
+   </kbd>
 </p>
 
-2 - La segunda opción es descargar el código en un paquete <strong>"zipado"</strong> y extraer la carpeta a tu computadora.
-</br></br>
+> Observaciones <br>
+> * Solo el id y id_autor son obligatorios, si faltan o estan en blanco, se retornará un error 400 Bad Request.<br>
+> * Si un campo no obligatorio esta nulo o en blanco, este no se actualizara en la base de datos.
+> * Si el campo titulo y mensaje ya exiten en la BD, se retornara un error 500, por duplicidad.
+> * Si cualquiera de los id no exiten en la BD, tambien se retonará un error 500.
 
-## 📝 Eclipse
-
-### ¿Cómo importar mi proyecto a Eclipse?
-
-1 - Una vez dentro del Editor al lado izquierdo, haz clic en el <em>Files</em> que está en el menú en la parte superior, elige la opción <em>Open Projects from File System</em>.
-
-<p align="center" >
-     <img width="400" heigth="400" src="https://user-images.githubusercontent.com/101413385/173164237-1db32d79-2b35-433f-817c-ec3fa30899fc.png">
+4. Eliminacion de Topico. <br>
+Para esta prueba se creó una HTTP DELETE request con la URI <code>http://localhost:8080/topicos/{id}</code>, después del envio se eliminará el topico con el id especificado en el URI {id}.
+<p align="Center">
+   <kbd>
+      <img src="https://github.com/CMZhn/Foro_Alura_ONE_G5/blob/main/Readme_Recursos/Prueba04_DeleteTopico.JPG" height="300">
+   </kbd>
 </p>
 
-Luego haz click en <em>Directory</em> y ubica el directorio del proyecto "clonado" o "extraído" en tu computadora. Haz click en <em>Finish</em> para completar la importación.
-
-<p align="center" >
-     <img width="600" heigth="600" src="https://user-images.githubusercontent.com/78982435/209683881-aa94b361-d63e-4d78-b5db-d5215b350efa.png">
+<br>
+<h3>Pruebas Spring 2</h3>
+<p align="left">
+   <img src="https://img.shields.io/badge/PRUEBAS%20SPRING%202-0-orange">
 </p>
 
-2 - La segunda forma de importar es en <em>File</em> en la opción <em>Import</em>. O a través del <strong>Project Explorer</strong> haz clic en el campo vacío con el botón derecho del mouse y elijas la opción <strong>Import</strong>.
-
-<p align="center" >
-     <img width="400" heigth="400" src="https://user-images.githubusercontent.com/101413385/173111357-2ec928ac-5a3d-4f7c-ba84-8906d84bfd08.png">
-</p>
-
-<p align="center" >
-     <img width="400" heigth="400" src="https://user-images.githubusercontent.com/101413385/169431325-23a2e3cb-85a3-4298-8e60-64dfa58e2e6f.png">
-</p>
-
-Si te decides por el <strong>Import</strong>, se abrirá la ventana correspondiente. Haz clic en la opción <em>Existing Projects Into Workspace</em> y en el botón <em>Next</em>.
-
-<p align="center" >
-     <img width="600" heigth="600" src="https://user-images.githubusercontent.com/101413385/169431890-27f40955-27d8-4b4d-82df-d3507f85de6c.png">
-</p>
-
-Luego haz clic en el botón <em>Browse</em> y busca el proyecto en el directorio local.
-
-<p align="center" >
-     <img width="600" heigth="600" src="https://user-images.githubusercontent.com/78982435/209683946-24a7a3c1-8170-4280-8047-5eb70cba7a9b.png">
-</p>
-
-## 🚧¿Cómo incluir mi proyecto en este Challenge?
-
-1. Publicar el proyecto en GitHub;
-2. Utiliza el tema/topic:
-   - *Grupo 5: **challengeforoalura5**;*
-   - Ve a la pestaña "`Acerca`" o `"About"` de tu proyecto en el menú de la izquierda dentro de tu repositorio de GitHub Incluye la etiqueta *"**challengeforoalura5**"*.
-
-![11 gif - github](https://user-images.githubusercontent.com/78982435/209682261-a06b735c-0752-48ad-bbd3-5784e4f6d7ef.gif)
-
-## 📬¿Cómo hago la entrega final de mi proyecto?
-
-1. Coloca tus datos en el formulario de entrega con el **link del proyecto publicado en GitHub** 
-🔹 [Enlace al fomulario](https://lp.alura.com.br/alura-latam-entrega-challenge-one-esp-back-end)
-
-   <p align="center" >
-     <img width="700" heigth="700" src="https://user-images.githubusercontent.com/91544872/216698915-e0d26701-44e6-4e81-8c33-211790c52f27.png">
-</p>
-
-2. Accede a tu correo electrónico para conseguir tu Insignia Exclusiva para este desafío 🏆
-
-3. ¡No olvides publicar un link o un vídeo de tu proyecto en [Linkedin](https://www.linkedin.com/company/alura-latam/mycompany/)! 🏁
-
-💙 Alura Latam
-
-[![img](https://camo.githubusercontent.com/c00f87aeebbec37f3ee0857cc4c20b21fefde8a96caf4744383ebfe44a47fe3f/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f2d4c696e6b6564496e2d2532333030373742353f7374796c653d666f722d7468652d6261646765266c6f676f3d6c696e6b6564696e266c6f676f436f6c6f723d7768697465)](https://www.linkedin.com/company/alura-latam/mycompany/)
-
-🧡 Oracle
-
-[![img](https://camo.githubusercontent.com/c00f87aeebbec37f3ee0857cc4c20b21fefde8a96caf4744383ebfe44a47fe3f/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f2d4c696e6b6564496e2d2532333030373742353f7374796c653d666f722d7468652d6261646765266c6f676f3d6c696e6b6564696e266c6f676f436f6c6f723d7768697465)](https://www.linkedin.com/company/oracle/)
 
 
+<h2>Autor</h2>
+<p align="center"><strong><a href="https://github.com/CMZhn"><em>Carlos Melgar</em></a></strong></p>
+<p align="center"><strong>2023</strong></p>

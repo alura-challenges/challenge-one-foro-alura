@@ -1,16 +1,41 @@
-package com.alura.modelo;
+package com.alura.foro.modelo;
 
 import java.time.LocalDateTime;
 
-public class Respuesta {
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToOne;
+import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 
+@Entity (name = "Respuesta")
+@Table (name ="Respuestas")
+@Getter
+@NoArgsConstructor
+@AllArgsConstructor
+@EqualsAndHashCode(of = "id")
+public class Respuesta {
+	
+	@Id
+	@GeneratedValue (strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String mensaje;
+	@OneToOne
+	@JoinColumn(name = "id_Topico")
 	private Topico topico;
 	private LocalDateTime fechaCreacion = LocalDateTime.now();
+	@ManyToOne
+	@JoinColumn(name = "id_Usuario")
 	private Usuario autor;
 	private Boolean solucion = false;
-
+/*
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -83,5 +108,5 @@ public class Respuesta {
 	public void setSolucion(Boolean solucion) {
 		this.solucion = solucion;
 	}
-
+*/
 }

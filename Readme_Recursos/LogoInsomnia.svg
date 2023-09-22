@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+
+<svg
+   width="150"
+   height="150"
+   viewBox="0 0 48 48"
+   version="1.1"
+   preserveAspectRatio="xMidYMid"
+   id="svg17"
+   sodipodi:docname="LogoInsomnia.svg"
+   inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview19"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="2.035"
+     inkscape:cx="88.943489"
+     inkscape:cy="149.14005"
+     inkscape:window-width="1920"
+     inkscape:window-height="1001"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg17" />
+  <defs
+     id="defs7">
+    <linearGradient
+       x1="129.44537"
+       y1="219.11877"
+       x2="129.44537"
+       y2="36.881424"
+       id="linearGradient-1"
+       gradientTransform="matrix(5.714296,0,0,5.714296,-9.1428571,-9.1428571)"
+       gradientUnits="userSpaceOnUse">
+      <stop
+         stop-color="#7400E1"
+         offset="0%"
+         id="stop2" />
+      <stop
+         stop-color="#4000BF"
+         offset="100%"
+         id="stop4" />
+    </linearGradient>
+  </defs>
+  <g
+     id="g15"
+     transform="matrix(0.175,0,0,0.175,1.6,1.6)">
+    <path
+       d="M 128,249.4912 C 195.0984,249.4912 249.492,195.0976 249.492,128 249.492,60.90208 195.0984,6.508472 128,6.508472 60.9024,6.508472 6.508792,60.90208 6.508792,128 6.508792,195.0976 60.9024,249.4912 128,249.4912 Z"
+       fill="#ffffff"
+       fill-rule="nonzero"
+       id="path9" />
+    <path
+       d="M 128,0 C 57.30752,0 0,57.30752 0,128 0,198.6928 57.30752,256 128,256 198.6928,256 256,198.6928 256,128 256,57.30752 198.6928,0 128,0 Z m 0,13.01696 c 63.5032,0 114.9832,51.47968 114.9832,114.98304 0,63.5032 -51.48,114.9832 -114.9832,114.9832 C 64.49664,242.9832 13.01696,191.5032 13.01696,128 13.01696,64.49664 64.49664,13.01696 128,13.01696 Z"
+       fill="#4000bf"
+       fill-rule="nonzero"
+       id="path11" />
+    <path
+       d="m 129.4456,36.88136 c 50.324,0 91.1192,40.7952 91.1192,91.11864 0,50.3232 -40.7952,91.1184 -91.1192,91.1184 -50.32328,0 -91.11848,-40.7952 -91.11848,-91.1184 0,-12.2984 2.43664,-24.028 6.85352,-34.7328 6.4492,8.7824 16.84952,14.484 28.58152,14.484 19.57064,0 35.43464,-15.8648 35.43464,-35.4348 0,-11.732 -5.7008,-22.13232 -14.484,-28.58144 10.7048,-4.41696 22.4344,-6.8536 34.7328,-6.8536 z"
+       fill="url(#linearGradient-1)"
+       id="path13"
+       style="fill:url(#linearGradient-1)" />
+  </g>
+</svg>

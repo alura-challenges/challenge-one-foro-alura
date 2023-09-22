@@ -1,20 +1,86 @@
-package com.alura.modelo;
+package com.alura.foro.modelo;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Topico {
+import com.alura.foro.dto.TopicoDTO;
+import com.alura.foro.dto.TopicoDTOupdate;
 
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
+import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+
+
+@Entity (name = "Topico")
+@Table (name ="Topicos")
+@Getter
+@NoArgsConstructor
+@AllArgsConstructor
+@EqualsAndHashCode(of = "id")
+public class Topico {
+	
+	@Id
+	@GeneratedValue (strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String titulo;
 	private String mensaje;
+	@Column(name = "fechacreacion")
 	private LocalDateTime fechaCreacion = LocalDateTime.now();
-	private StatusTopico status = StatusTopico.NO_RESPONDIDO;
+	@Enumerated(EnumType.STRING)
+	private StatusTopico estado = StatusTopico.NO_RESPONDIDO;
+	@ManyToOne
+	@JoinColumn(name = "id_Usuario")
 	private Usuario autor;
+	@ManyToOne
+	@JoinColumn(name = "id_Curso")
 	private Curso curso;
+	@ManyToMany
+	@JoinTable (
+			name = "Topico_Respuesta",
+			joinColumns ={ @JoinColumn (name = "id_Topico") }, 
+			        inverseJoinColumns = { @JoinColumn(name = "id_Respuesta") }
+			)
 	private List<Respuesta> respuestas = new ArrayList<>();
+	
+	public Topico(TopicoDTO topicoDTO,Usuario usuario, Curso curso) {	
+		this.titulo=topicoDTO.titulo();
+		this.mensaje=topicoDTO.mensaje();
+		this.autor=usuario;
+		this.curso=curso;	
+	}
 
+	public void actualizarDatos(TopicoDTOupdate topicoDTOupdate, Curso cursoUpdate) {
+		if (topicoDTOupdate.titulo()!=null&&!topicoDTOupdate.titulo().isBlank()) {
+			this.titulo=topicoDTOupdate.titulo();
+		}
+		
+		if(topicoDTOupdate.mensaje()!=null&&!topicoDTOupdate.mensaje().isBlank()) {
+			this.mensaje=topicoDTOupdate.mensaje();
+		}
+		
+		if (curso!=null) {
+			this.curso=cursoUpdate;
+		}
+		
+	}
+	
+	
+	
+/*
 	public Topico(String titulo, String mensaje, Curso curso) {
 		this.titulo = titulo;
 		this.mensaje = mensaje;
@@ -109,5 +175,5 @@ public class Topico {
 	public void setRespuestas(List<Respuesta> respuestas) {
 		this.respuestas = respuestas;
 	}
-
+*/
 }
