@@ -3,9 +3,9 @@ package com.alura.modelo;
 public class Usuario {
 
 	private Long id;
-	private String nombre;
+	private String name;
 	private String email;
-	private String contrasena;
+	private String password;
 
 	@Override
 	public int hashCode() {
@@ -40,12 +40,12 @@ public class Usuario {
 		this.id = id;
 	}
 
-	public String getNombre() {
-		return nombre;
+	public String getName() {
+		return name;
 	}
 
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public String getEmail() {
@@ -56,12 +56,12 @@ public class Usuario {
 		this.email = email;
 	}
 
-	public String getContrasena() {
-		return contrasena;
+	public String getPassword() {
+		return password;
 	}
 
-	public void setContrasena(String contrasena) {
-		this.contrasena = contrasena;
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
 }

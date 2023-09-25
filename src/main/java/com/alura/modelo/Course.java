@@ -1,14 +1,14 @@
 package com.alura.modelo;
 
-public class Curso {
+public class Course {
 
 	private Long id;
-	private String nombre;
-	private String categoria;
+	private String name;
+	private String category;
 
-	public Curso(String nombre, String categoria) {
-		this.nombre = nombre;
-		this.categoria = categoria;
+	public Course(String name, String category) {
+		this.name = name;
+		this.category = category;
 	}
 	
 	@Override
@@ -27,7 +27,7 @@ public class Curso {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Curso other = (Curso) obj;
+		Course other = (Course) obj;
 		if (id == null) {
 			if (other.id != null)
 				return false;
@@ -44,20 +44,20 @@ public class Curso {
 		this.id = id;
 	}
 
-	public String getNombre() {
-		return nombre;
+	public String getName() {
+		return name;
 	}
 
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
+	public void setName(String name) {
+		this.name = name;
 	}
 
-	public String getCategoria() {
-		return categoria;
+	public String getCategory() {
+		return category;
 	}
 
-	public void setCategoria(String categoria) {
-		this.categoria = categoria;
+	public void setCategory(String category) {
+		this.category = category;
 	}
 
 }
