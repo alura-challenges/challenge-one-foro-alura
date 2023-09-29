@@ -14,10 +14,13 @@ import com.alura.foro.dto.UsuarioDTOget;
 import com.alura.foro.modelo.Usuario;
 import com.alura.foro.repository.UsuarioRepository;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping("/usuarios")
+@SecurityRequirement(name = "bearer-key")
 public class UsuarioController {
 	
 	@Autowired
@@ -25,11 +28,13 @@ public class UsuarioController {
 	
 	
 	@PostMapping
-	public void registrarTopico(@RequestBody @Valid UsuarioDTO usuario) {
+	@Operation(summary = "Registra un nuevo paciente")
+	public void registrarUsuario(@RequestBody @Valid UsuarioDTO usuario) {
 		usuarioRepository.save(new Usuario(usuario));
 	}
 	
 	@GetMapping
+	@Operation(summary = "Obtiene el listado para los usuarios")
 	public List<UsuarioDTOget> ListadoUsuarios () {
 		return usuarioRepository.findAll().stream().map(UsuarioDTOget::new).toList();
 	}
