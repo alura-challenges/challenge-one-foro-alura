@@ -1,7 +1,6 @@
 package com.alura.api.model.topic;
 
-import com.alura.api.model.Answer;
-import com.alura.api.model.Course.Course;
+import com.alura.api.model.course.Course;
 import com.alura.api.model.user.User;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -37,7 +36,7 @@ public class Topic {
 	@JoinColumn(name = "course_id")
 	private Course course;
 	@Embedded
-	private List<Answer> answers = new ArrayList<>();
+	private List<Object> answers = new ArrayList<>();
 
 	public Topic(String title, String message, User author, Course course) {
 		this.title = title;
