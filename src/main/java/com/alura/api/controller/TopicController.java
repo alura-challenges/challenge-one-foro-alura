@@ -25,25 +25,26 @@ public class TopicController {
     }
 
     @GetMapping
-    public ResponseEntity<Page<TopicListData>> getTopics(@PageableDefault(size = 2) Pageable paginacion) {
-        return ResponseEntity.ok(topicService.getTopics(paginacion).map(TopicListData::new));
+    public ResponseEntity<Page<TopicListData>> getAllTopics(@PageableDefault(size = 2) Pageable paginacion) {
+        return ResponseEntity.ok(topicService.getAllTopics(paginacion).map(TopicListData::new));
     }
 
 
     @GetMapping("/{id}")
-    public ResponseEntity<TopicListData> getTopic(@PathVariable Long id) {
-        return ResponseEntity.ok(topicService.getTopic(id));
+    public ResponseEntity<TopicListData> getTopicById(@PathVariable Long id) {
+        return ResponseEntity.ok(topicService.getTopicById(id));
     }
 
     @PutMapping("/{id}")
     @Transactional
-    public ResponseEntity<TopicData> updateTopic(@PathVariable Long id, @RequestBody TopicData topicData) {
-        return  ResponseEntity.ok(topicService.updateTopic(id, topicData));
+    public ResponseEntity<TopicData> updateTopicById(@PathVariable Long id, @RequestBody TopicData topicData) {
+        return  ResponseEntity.ok(topicService.updateTopicById(id, topicData));
     }
 
     @DeleteMapping("/{id}")
-    public void deleteTopic(@PathVariable Long id) {
-        topicService.deleteTopic(id);
+    public ResponseEntity deleteTopicById(@PathVariable Long id) {
+        topicService.deleteTopicById(id);
+        return ResponseEntity.noContent().build();
     }
 
 

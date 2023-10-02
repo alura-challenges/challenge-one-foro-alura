@@ -42,15 +42,16 @@ public class TopicService {
         User author = userRepository.getReferenceById(registerTopic.author());
         Course course = courseRepository.getReferenceById(registerTopic.course());
         Topic topic = topicRepository.save(new Topic(registerTopic.title(),registerTopic.message(), author, course));
+
         return new TopicDetailData(topicRepository.save(topic));
     }
 
 
-    public Page<Topic> getTopics(Pageable paginacion) {
+    public Page<Topic> getAllTopics(Pageable pageable) {
         List<Topic> topics = topicRepository.findAll();
 
-        int pageSize = paginacion.getPageSize();
-        int pageNumber = paginacion.getPageNumber();
+        int pageSize = pageable.getPageSize();
+        int pageNumber = pageable.getPageNumber();
 
         int fromIndex = pageNumber * pageSize;
         int toIndex = Math.min(fromIndex + pageSize, topics.size());
@@ -58,13 +59,16 @@ public class TopicService {
         return new PageImpl<Topic>(topics.subList(fromIndex, toIndex), PageRequest.of(pageNumber, pageSize), topics.size());
     }
 
-    public TopicListData getTopic(Long id) {
+    public TopicListData getTopicById(Long id) {
         Topic topic = topicRepository.getReferenceById(id);
         return new TopicListData(topic);
     }
 
 
-    public TopicData updateTopic(Long id, TopicData topicData) {
+    public TopicData updateTopicById(Long id, TopicData topicData) {
+        if(id == null) {
+            throw new IntegrityValidator("Id must not be null");
+        }
         Topic topic = topicRepository.getReferenceById(id);
         User author = userRepository.getReferenceById(topicData.author());
         Course course = courseRepository.getReferenceById(topicData.course());
@@ -74,7 +78,7 @@ public class TopicService {
         return new TopicData(topicUpdated);
     }
 
-    public void deleteTopic(Long id) {
+    public void deleteTopicById(Long id) {
         topicRepository.deleteById(id);
     }
 }
