@@ -1,9 +1,5 @@
 package com.alura.api.controller;
 
-import com.alura.api.model.Course.Course;
-import com.alura.api.model.Course.CourseData;
-import com.alura.api.model.Course.CourseRepository;
-import com.alura.api.model.Course.CourseResponseData;
 import com.alura.api.model.user.User;
 import com.alura.api.model.user.UserRegistrationData;
 import com.alura.api.model.user.UserRepository;

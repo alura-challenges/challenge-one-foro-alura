@@ -1,8 +1,7 @@
 package com.alura.api.model.topic;
 
-import com.alura.api.model.Course.CourseResponseData;
+import com.alura.api.model.course.CourseResponseData;
 import com.alura.api.model.user.UserResponseData;
-import jakarta.validation.Valid;
 
 import java.time.LocalDateTime;
 

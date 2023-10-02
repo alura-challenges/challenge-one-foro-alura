@@ -1,4 +1,4 @@
-package com.alura.api.model.Course;
+package com.alura.api.model.course;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
