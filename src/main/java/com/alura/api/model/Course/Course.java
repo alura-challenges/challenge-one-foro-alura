@@ -1,16 +1,34 @@
-package com.alura.modelo;
+package com.alura.api.model.Course;
 
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+
+@Table(name = "courses")
+@Entity(name = "Course")
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
 public class Course {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String name;
+
 	private String category;
 
-	public Course(String name, String category) {
-		this.name = name;
-		this.category = category;
+	private String formation;
+
+
+	public Course(CourseData courseData) {
+		this.name = courseData.courseName();
+		this.category = courseData.courseCategory();
+		this.formation = courseData.formation();
 	}
-	
+
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -35,29 +53,4 @@ public class Course {
 			return false;
 		return true;
 	}
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public String getCategory() {
-		return category;
-	}
-
-	public void setCategory(String category) {
-		this.category = category;
-	}
-
 }

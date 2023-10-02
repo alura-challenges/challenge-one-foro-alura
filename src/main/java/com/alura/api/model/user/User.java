@@ -1,11 +1,30 @@
-package com.alura.modelo;
+package com.alura.api.model.user;
 
-public class Usuario {
 
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+
+@Table(name = "users")
+@Entity(name = "User")
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+public class User {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String name;
 	private String email;
 	private String password;
+
+	public User(UserRegistrationData userRegistrationData) {
+		this.name = userRegistrationData.name();
+		this.email = userRegistrationData.email();
+		this.password = userRegistrationData.password();
+	}
 
 	@Override
 	public int hashCode() {
@@ -23,7 +42,7 @@ public class Usuario {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Usuario other = (Usuario) obj;
+		User other = (User) obj;
 		if (id == null) {
 			if (other.id != null)
 				return false;

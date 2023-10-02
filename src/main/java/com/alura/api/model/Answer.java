@@ -1,14 +1,36 @@
-package com.alura.modelo;
+package com.alura.api.model;
+
+import com.alura.api.model.topic.Topic;
+import com.alura.api.model.user.User;
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 
+
+@Embeddable
+@Table(name = "answers")
+@Entity(name = "Answer")
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
 public class Answer {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String message;
+
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "topic_id")
 	private Topic topic;
 	private LocalDateTime creationDate = LocalDateTime.now();
-	private Usuario author;
+
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "author_id")
+	private User author;
 	private Boolean solution = false;
 
 	@Override
@@ -68,11 +90,11 @@ public class Answer {
 		this.creationDate = creationDate;
 	}
 
-	public Usuario getAuthor() {
+	public User getAuthor() {
 		return author;
 	}
 
-	public void setAuthor(Usuario author) {
+	public void setAuthor(User author) {
 		this.author = author;
 	}
 
