@@ -1,4 +1,4 @@
-package com.alura.api.model.topic;
+package com.alura.api.domain.topic;
 
 public enum TopicStatus {
 	

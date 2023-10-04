@@ -1,4 +1,4 @@
-package com.alura.api.model.user;
+package com.alura.api.domain.user;
 
 public record UserResponseData(
         String name

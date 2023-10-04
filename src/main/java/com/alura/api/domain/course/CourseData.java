@@ -1,4 +1,4 @@
-package com.alura.api.model.course;
+package com.alura.api.domain.course;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;

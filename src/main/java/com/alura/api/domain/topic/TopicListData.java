@@ -1,7 +1,7 @@
-package com.alura.api.model.topic;
+package com.alura.api.domain.topic;
 
-import com.alura.api.model.course.CourseResponseData;
-import com.alura.api.model.user.UserResponseData;
+import com.alura.api.domain.course.CourseResponseData;
+import com.alura.api.domain.user.UserResponseData;
 
 import java.time.LocalDateTime;
 

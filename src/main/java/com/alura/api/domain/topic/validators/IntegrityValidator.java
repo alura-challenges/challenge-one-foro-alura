@@ -1,4 +1,4 @@
-package com.alura.api.model.topic.validators;
+package com.alura.api.domain.topic.validators;
 
 public class IntegrityValidator extends RuntimeException {
 

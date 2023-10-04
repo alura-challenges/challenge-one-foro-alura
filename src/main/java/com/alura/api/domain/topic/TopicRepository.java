@@ -1,7 +1,6 @@
-package com.alura.api.model.topic;
+package com.alura.api.domain.topic;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
 
 import java.util.List;
 

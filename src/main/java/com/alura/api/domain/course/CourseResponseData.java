@@ -1,4 +1,4 @@
-package com.alura.api.model.course;
+package com.alura.api.domain.course;
 
 public record CourseResponseData(
         String courseName,

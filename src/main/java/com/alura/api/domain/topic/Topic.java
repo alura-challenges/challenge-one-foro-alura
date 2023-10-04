@@ -1,7 +1,7 @@
-package com.alura.api.model.topic;
+package com.alura.api.domain.topic;
 
-import com.alura.api.model.course.Course;
-import com.alura.api.model.user.User;
+import com.alura.api.domain.course.Course;
+import com.alura.api.domain.user.User;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;

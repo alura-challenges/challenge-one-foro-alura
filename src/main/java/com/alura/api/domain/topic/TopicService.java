@@ -1,10 +1,10 @@
-package com.alura.api.model.topic;
+package com.alura.api.domain.topic;
 
-import com.alura.api.model.course.Course;
-import com.alura.api.model.course.CourseRepository;
-import com.alura.api.model.user.User;
-import com.alura.api.model.user.UserRepository;
-import com.alura.api.model.topic.validators.IntegrityValidator;
+import com.alura.api.domain.course.Course;
+import com.alura.api.domain.course.CourseRepository;
+import com.alura.api.domain.user.User;
+import com.alura.api.domain.user.UserRepository;
+import com.alura.api.domain.topic.validators.IntegrityValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
