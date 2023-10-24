@@ -1,6 +1,6 @@
-package com.alura.modelo;
+package com.alura.api.domain.topic;
 
-public enum StatusTopico {
+public enum TopicStatus {
 	
 	NO_RESPONDIDO,
 	NO_SOLUCIONADO,
